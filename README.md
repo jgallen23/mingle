@@ -16,7 +16,7 @@ an unobtrusive javascript template library
 	var node = mingle.render('template1', data); 
 
 	//render directly to another node
-	var node = mingle.render('template1', data, $("#module"); 
+	var node = mingle.render('template1', data, $("#module")); 
 
 	//pass in an array or an object
 	var data = { name: "Bob", location: "Hermosa Beach" };
