@@ -1,0 +1,18 @@
+{
+  "name": "mingle",
+  "description": "a different kind of javascript template library",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jgallen23/mingle",
+  "author": "Greg Allen <@jgaui> (http://jga.me)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jgallen23/mingle.git"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "nodeunit": "*"
+  },
+  "main": "./dist/mingle.js",
+  "keywords": ["ender", "template"]
+}

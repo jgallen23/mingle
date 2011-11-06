@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>QUnit Test Suite</title>
+	<link rel="stylesheet" href="qunit/qunit.css" type="text/css" media="screen">
+  <script type="text/javascript" src="live.js"></script>
+	<script type="text/javascript" src="qunit/qunit.js"></script>
+	<script type="text/javascript" src="jquery-1.7.min.js"></script>
+  <!--<script type="text/javascript" src="../lib/mingle.js"></script>-->
+  <script type="text/javascript" src="../dist/mingle.js"></script>
+	<script type="text/javascript" src="web.js"></script>
+</head>
+<body>
+	<h1 id="qunit-header">QUnit Test Suite</h1>
+	<h2 id="qunit-banner"></h2>
+	<div id="qunit-testrunner-toolbar"></div>
+	<h2 id="qunit-userAgent"></h2>
+	<ol id="qunit-tests"></ol>
+	<div id="qunit-fixture">
+    <div data-template="template1">
+      <span data-key="name"></span> from <span data-key="location"></span>
+    </div>
+    <div data-tpl="template2">
+      <span data-k="name"></span> from <span data-k="location"></span>
+    </div>
+    <div id="module"></div>
+	</div>
+</body>
+</html>
