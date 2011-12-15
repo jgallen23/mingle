@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css"/>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script>mocha.setup('tdd')</script>
+		<script type="text/javascript" src="live.js"></script>
+		<script type="text/javascript" src="jquery-1.7.min.js"></script>
+		<script type="text/javascript" src="../lib/mingle.js"></script>
+		<!--<script type="text/javascript" src="../dist/mingle.js"></script>-->
+		<script type="text/javascript" src="assert.js"></script>
+		<script type="text/javascript" src="mingle.test.js"></script>
+    <style>
+      .fixture { display: none; }
+    </style>
+    <script>
+    </script>
+    <script>
+      onload = function(){
+        var runner = mocha.run();
+      };
+    </script>
+	</head>
+	<body>
+    <div class="fixture">
+      <div data-template="template1">
+        <span data-key="name"></span> from <span data-key="location"></span>
+      </div>
+      <div data-tpl="template2">
+        <span data-k="name"></span> from <span data-k="location"></span>
+      </div>
+      <div id="module"></div>
+    </div>
+    <div id="mocha"></div>
+	</body>
+</html>
