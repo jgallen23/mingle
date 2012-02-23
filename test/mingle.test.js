@@ -7,9 +7,10 @@ suite('mingle', function() {
   test('testObject', function() {
     var data = { name: "Bob", location: "Hermosa Beach" };
     var node = mingle.render('template1', data);
+    console.log(node);
     assert.equals(node.find('span:eq(0)').html(), data.name);
     assert.equals(node.find('span:eq(1)').html(), data.location);
-    assert.equals($("["+mingle.options.templateAttribute+"]").length, 1);
+    //assert.equals($("["+mingle.options.template+"]").length, 1);
   });
 
 
@@ -19,7 +20,7 @@ suite('mingle', function() {
     var node = mingle.render('template1', data);
     assert.equals(node.find('span:eq(0)').html(), data.name);
     assert.equals(node.find('span:eq(1)').html(), data.location);
-    assert.equals($("["+mingle.options.templateAttribute+"]").length, 1);
+    //assert.equals($("["+mingle.options.template+"]").length, 1);
   });
 
   test('testArray', function() {
@@ -43,6 +44,15 @@ suite('mingle', function() {
     assert.equals($("#module div").length, 1);
   });
 
+  test('data attribute', function() {
+    var img = 'http://www.google.com/intl/en_com/images/srpr/logo3w.png';
+    var data = { img: img};
+    var node = mingle.render('attr', data, $("#module"));
+
+    assert.equals($("#module img").length, 1);
+    assert.equals($("#module img").attr('src'), img);
+  });
+
   test('templateNotFound', function() {
     assert.raises(function() {
       mingle.render('badTemplate', {});
@@ -57,13 +67,13 @@ suite('mingle', function() {
 
   test('changeOptions', function() {
     setTimeout(function() { //delay so it doesn't affect other tests
-      mingle.options.templateAttribute = "data-tpl";
-      mingle.options.keyAttribute = "data-k";
+      mingle.options.template = "data-tpl";
+      mingle.options.key = "data-k";
       var data = { name: "Bob", location: "Hermosa Beach" };
       var node = mingle.render('template2', data);
       assert.equals(node.find('span:eq(0)').html(), data.name);
       assert.equals(node.find('span:eq(1)').html(), data.location);
-      assert.equals($("["+mingle.options.templateAttribute+"]").length, 1);
+      assert.equals($("["+mingle.options.template+"]").length, 1);
     }, 200); 
   });
 });
